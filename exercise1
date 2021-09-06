@@ -1,0 +1,27 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Sep  6 10:30:59 2021
+
+@author: josedelcour
+"""
+import numpy as np
+import pandas as pd
+np.__version__
+pd.__version__
+df = pd.read_csv("~/Downloads/data.csv")
+
+df["Make"].value_counts()
+rr=df[df["Make"]=="Rolls-Royce"]
+rr=rr.drop_duplicates()
+rr.shape
+
+X=np.asarray(rr)
+XTX = X.T.dot(X)
+invXTX = np.linalg.inv(XTX)
+sum(sum(invXTX))
+y = np.array([1000, 1100, 900, 1200, 1000, 850, 1300])
+invXTX.dot(X.T).dot(y)
+
+ss=df[df["Year"] >=2015]    #question asks for after 2015. Should be from onward.
+sum(ss['Engine HP'].isna())
