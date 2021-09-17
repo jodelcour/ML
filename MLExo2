@@ -1,0 +1,137 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Sep 16 17:08:44 2021
+
+@author: josedelcour
+"""
+
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+dataset = pd.read_csv('~/Downloads/AB_NYC_2019.csv')
+features = ['latitude',
+'longitude',
+'price',
+'minimum_nights',
+'number_of_reviews',
+'reviews_per_month',
+'calculated_host_listings_count',
+'availability_365']
+
+df=dataset[features]
+
+rs=9
+np.random.seed(rs)
+
+n = len(df)
+
+n_val = int(0.2 * n)
+n_test = int(0.2 * n)
+n_train = n - (n_val + n_test)
+
+idx = np.arange(n)
+np.random.shuffle(idx)
+
+df_shuffled = df.iloc[idx]
+
+df_train = df_shuffled.iloc[:n_train].copy()
+df_val = df_shuffled.iloc[n_train:n_train+n_val].copy()
+df_test = df_shuffled.iloc[n_train+n_val:].copy()
+
+y_train = np.log1p(df_train.price.values)
+y_val = np.log1p(df_val.price.values)
+y_test = np.log1p(df_test.price.values)
+
+del df_train['price']
+del df_val['price']
+del df_test['price']
+
+def rmse(y, y_pred):
+    error = y_pred - y
+    mse = (error ** 2).mean()
+    return np.sqrt(mse)
+
+def train_linear_regression_reg(X, y, r=0.0):
+    ones = np.ones(X.shape[0])
+    X = np.column_stack([ones, X])
+
+    XTX = X.T.dot(X)
+    reg = r * np.eye(XTX.shape[0])
+    XTX = XTX + reg
+
+    XTX_inv = np.linalg.inv(XTX)
+    w = XTX_inv.dot(X.T).dot(y)
+    
+    return w[0], w[1:]
+
+
+def train_linear_regression(X, y):
+    ones = np.ones(X.shape[0])
+    X = np.column_stack([ones, X])
+
+    XTX = X.T.dot(X)
+    XTX_inv = np.linalg.inv(XTX)
+    w = XTX_inv.dot(X.T).dot(y)
+    
+    return w[0], w[1:]
+
+
+"""
+#Question 1
+df.isnull().sum()  # reviews_per_month   10052
+
+#Question 2
+df.median()    #minimum_nights has a median of 3
+# np.median(dataset['minimum_nights'])
+
+#Question 3  mean 1.368549
+#df_train['reviews_per_month'].fillna(0, inplace=True)
+#w0,w=train_linear_regression(df_train, y_train)
+#y_pred = w0 + df_train.dot(w)
+#round(rmse(y_pred, y_train),2)  #0.64
+# both models give 0.64 ???
+
+#Question 4
+df_train['reviews_per_month'].fillna(0, inplace=True)
+df_val['reviews_per_month'].fillna(0, inplace=True)
+for r in [0, 0.000001, 0.0001, 0.001, 0.01, 0.1, 1, 5, 10]:
+    w0, w = train_linear_regression_reg(df_train, y_train, r=r)
+
+    y_pred = w0 + df_val.dot(w)
+    score = rmse(y_val, y_pred)
+
+    print(r, round(score,2))
+# smallest score with r=0 
+
+
+#Question 5
+df_train['reviews_per_month'].fillna(0, inplace=True)
+df_test['reviews_per_month'].fillna(0, inplace=True)
+w0,w=train_linear_regression(df_train, y_train)
+y_pred = w0 + df_test.dot(w)
+score = rmse(y_test, y_pred)
+
+
+print(rs, round(score,3))   #-->0.008
+"""
+df_train['reviews_per_month'].fillna(0, inplace=True)
+df_test['reviews_per_month'].fillna(0, inplace=True)
+df_val['reviews_per_month'].fillna(0, inplace=True)
+
+df_full_train = pd.concat([df_train, df_val])
+df_full_train = df_full_train.reset_index(drop=True)
+X_full_train = df_full_train
+
+y_full_train = np.concatenate([y_train, y_val])
+w0, w = train_linear_regression_reg(X_full_train, y_full_train, r=0.001)
+X_test = df_test
+y_pred = w0 + X_test.dot(w)
+score = rmse(y_test, y_pred)
+score
+
+
+
+
