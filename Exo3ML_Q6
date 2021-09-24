@@ -75,9 +75,10 @@ X_val.columns = dv.get_feature_names()
 
 from sklearn.linear_model import Ridge
 for alpha in [0, 0.01, 0.1, 1, 10]:
-    model = Ridge(alpha=alpha, fit_intercept=True, normalize=True, copy_X=True, solver='auto')
-    model.fit(X_train, y_train)
-    predicted = model.predict(X_train)
+    model = Ridge(alpha=alpha)
+    XT=X_train.copy()
+    model.fit(XT, y_train)
+    predicted = model.predict(XT)
     from sklearn.metrics import mean_squared_error
     mse = mean_squared_error(y_train, predicted)
     print(alpha,'->',  mse**.5)

@@ -52,10 +52,10 @@ numerical=['latitude',
 
 categorical=['room_type','neighbourhood_group']
 
-liste = ['neighbourhood_group','room_type','number_of_reviews',',reviews_per_month']
+liste = ['neighbourhood_group','room_type','reviews_per_month']
 ##Question 5:
 categorical=['room_type','neighbourhood_group']
-    
+  #'number_of_reviews'  
     
     
     
@@ -84,15 +84,14 @@ from sklearn.linear_model import LogisticRegression
 model = LogisticRegression()
 model = LogisticRegression(solver='lbfgs', C=1.0, random_state=42 ,max_iter= 1000)
 model.fit(X_train, aav_train)
-y_pred = model.predict(X_val)
+y_pred = model.predict(X_train)
 
-print((y_pred==aav_val).mean())
-#Resp:   0.7982411289497904  (all)
-#Resp:   0.7946620308825033  (neighbourhood_group)
-#Resp:   0.7399529604254014  (room_type)
-#Resp:   0.7993659883423663  (number_of_reviews)
-#Resp:   0.7982411289497904  (reviews_per_month)  <<<---
-
+print((y_pred==aav_train).mean())
+#Resp:   0.7984797354876095  (all)
+#Resp:   0.7951733306064015  (neighbourhood_group)  0.003306404881208036
+#Resp:   0.7415891195418755  (room_type)            0.05689061594573408
+#Resp:   0.79834338889457    (number_of_reviews)    0.0001363465930395158
+#Resp:   0.799434161638886  (reviews_per_month)    -0.0009544261512764995
 
 
 
