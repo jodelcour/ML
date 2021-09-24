@@ -1,0 +1,102 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Sep 23 07:19:57 2021
+
+@author: josedelcour
+"""
+
+import pandas as pd
+import numpy as np
+
+import seaborn as sns
+from matplotlib import pyplot as plt
+
+df = pd.read_csv('~/Downloads/AB_NYC_2019.csv')
+col = ['neighbourhood_group',
+'room_type',
+'latitude',
+'longitude',
+'price',
+'minimum_nights',
+'number_of_reviews',
+'reviews_per_month',
+'calculated_host_listings_count',
+'availability_365']
+df=df[col]
+df.fillna(0, inplace=True)
+
+##Question 2:
+from sklearn.model_selection import train_test_split
+df_train_full, df_test = train_test_split(df, test_size=0.2, random_state=42)
+df_train, df_val = train_test_split(df_train_full, test_size=0.25, random_state=42)
+y_train=df_train.price.values
+y_val=df_val.price.values
+y_test=df_test.price.values
+
+aav_train = (y_train>=152).astype(int)
+aav_test = (y_test>=152).astype(int)
+aav_val = (y_val>=152).astype(int)
+
+del df_train['price']
+del df_val['price']
+del df_test['price']
+
+numerical=['latitude',
+'longitude',
+'minimum_nights',
+'number_of_reviews',
+'reviews_per_month',
+'calculated_host_listings_count',
+'availability_365']
+
+categorical=['room_type','neighbourhood_group']
+
+liste = ['neighbourhood_group','room_type','number_of_reviews',',reviews_per_month']
+##Question 5:
+categorical=['room_type','neighbourhood_group']
+    
+    
+    
+    
+    
+from sklearn.feature_extraction import DictVectorizer
+
+dv = DictVectorizer(sparse=False)
+train_dicts = df_train[categorical+numerical].to_dict(orient='records')
+val_dicts = df_val[categorical+numerical].to_dict(orient='records')
+
+X_train = pd.DataFrame(dv.fit_transform(train_dicts))
+X_val = pd.DataFrame(dv.fit_transform(val_dicts))
+dv.get_feature_names()
+X_train.columns = dv.get_feature_names()
+X_val.columns = dv.get_feature_names()
+
+from sklearn.preprocessing import StandardScaler
+scaler = StandardScaler()
+scaler.fit(X_train)
+X_train = scaler.transform(X_train)
+scaler.fit(X_val)
+X_val = scaler.transform(X_val)
+
+## LOGISTIC REGRESSION
+from sklearn.linear_model import LogisticRegression
+model = LogisticRegression()
+model = LogisticRegression(solver='lbfgs', C=1.0, random_state=42 ,max_iter= 1000)
+model.fit(X_train, aav_train)
+y_pred = model.predict(X_val)
+
+print((y_pred==aav_val).mean())
+#Resp:   0.7982411289497904  (all)
+#Resp:   0.7946620308825033  (neighbourhood_group)
+#Resp:   0.7399529604254014  (room_type)
+#Resp:   0.7993659883423663  (number_of_reviews)
+#Resp:   0.7982411289497904  (reviews_per_month)  <<<---
+
+
+
+
+
+  
+
+

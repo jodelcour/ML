@@ -1,0 +1,133 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Sep 23 07:19:57 2021
+
+@author: josedelcour
+"""
+
+import pandas as pd
+import numpy as np
+
+import seaborn as sns
+from matplotlib import pyplot as plt
+
+df = pd.read_csv('~/Downloads/AB_NYC_2019.csv')
+col = ['neighbourhood_group',
+'room_type',
+'latitude',
+'longitude',
+'price',
+'minimum_nights',
+'number_of_reviews',
+'reviews_per_month',
+'calculated_host_listings_count',
+'availability_365']
+df=df[col]
+df.fillna(0, inplace=True)
+
+##Question 1: 
+df['neighbourhood_group'].value_counts()
+## MANHATTAN
+
+"""
+neighbourhood_group
+room_type
+number_of_reviews
+reviews_per_month
+"""
+##Question 2:
+from sklearn.model_selection import train_test_split
+df_train_full, df_test = train_test_split(df, test_size=0.2, random_state=42)
+df_train, df_val = train_test_split(df_train_full, test_size=0.25, random_state=42)
+y_train=df_train.price.values
+y_val=df_val.price.values
+y_test=df_test.price.values
+
+del df_train['price']
+del df_val['price']
+del df_test['price']
+
+numerical=['latitude',
+'longitude',
+'minimum_nights',
+'number_of_reviews',
+'reviews_per_month',
+'calculated_host_listings_count',
+'availability_365']
+
+categorical=['room_type','neighbourhood_group']
+cor_train=df_train[numerical]
+z=cor_train.corr()
+##Resp;             'calculated_host_listings_count','availability_365'
+
+##Question 3:
+#above_average which is 1 if the price is above (or equal to) 152 
+from sklearn.metrics import mutual_info_score
+aav_train = (y_train>=152).astype(int)
+aav_test = (y_test>=152).astype(int)
+aav_val = (y_val>=152).astype(int)
+mutual_info_score(df_train['neighbourhood_group'], aav_train) #0.047
+mutual_info_score(df_train['room_type'], aav_train) #0.143
+
+##Resp->room-type
+
+##Question 4:
+    
+from sklearn.feature_extraction import DictVectorizer
+
+dv = DictVectorizer(sparse=False)
+train_dicts = df_train[categorical+numerical].to_dict(orient='records')
+val_dicts = df_val[categorical+numerical].to_dict(orient='records')
+
+X_train = pd.DataFrame(dv.fit_transform(train_dicts))
+X_val = pd.DataFrame(dv.fit_transform(val_dicts))
+dv.get_feature_names()
+X_train.columns = dv.get_feature_names()
+X_val.columns = dv.get_feature_names()
+
+from sklearn.preprocessing import StandardScaler
+scaler = StandardScaler()
+scaler.fit(X_train)
+X_train = scaler.transform(X_train)
+scaler.fit(X_val)
+X_val = scaler.transform(X_val)
+
+## LOGISTIC REGRESSION
+from sklearn.linear_model import LogisticRegression
+model = LogisticRegression()
+model = LogisticRegression(solver='lbfgs', C=1.0, random_state=42 ,max_iter= 1000)
+model.fit(X_train, aav_train)
+y_pred = model.predict(X_val)
+
+print((y_pred==aav_val).mean())
+#Resp: 0.7982411289497904
+
+##Question 5:  reviews_per_month has the very same score (see Exo3ML_Q5)
+
+##Question 6:  alpha = 10
+
+""" 
+from sklearn.preprocessing import OneHotEncoder
+encoder = OneHotEncoder(handle_unknown='ignore', dtype='int')
+
+X_trainC = encoder.fit_transform(df_train[categorical]).toarray()
+df_trainC = pd.DataFrame(X_trainC)
+df_trainC.columns = encoder.get_feature_names()
+df_trainC.reset_index(inplace=True, drop=True)
+
+from sklearn import preprocessing
+df_trainN = df_train[numerical]
+scaler = preprocessing.StandardScaler().fit(df_trainN)
+df_trainN = scaler.transform(df_trainN)
+df_trainN=pd.DataFrame(df_trainN)
+df_trainN.reset_index(inplace = True, drop = True)
+X_train = pd.concat([df_trainC, df_trainN], axis = 1) 
+X_train.reset_index(inplace=True, drop =True)
+
+from sklearn.linear_model import LogisticRegression
+model = LogisticRegression(solver='lbfgs', C=1.0, random_state=42)
+model.fit(X_train, aav_train)
+yp = model.predict(X_val)
+print(round((yp==aav_val).mean(),3))
+"""
