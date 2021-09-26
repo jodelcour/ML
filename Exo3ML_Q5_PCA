@@ -1,0 +1,100 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Sep 23 07:19:57 2021
+
+@author: josedelcour
+"""
+
+import pandas as pd
+import numpy as np
+
+import seaborn as sns
+from matplotlib import pyplot as plt
+
+df = pd.read_csv('~/Downloads/AB_NYC_2019.csv')
+col = ['neighbourhood_group',
+'room_type',
+'latitude',
+'longitude',
+'price',
+'minimum_nights',
+'number_of_reviews',
+'reviews_per_month',
+'calculated_host_listings_count',
+'availability_365']
+df=df[col]
+df.fillna(0, inplace=True)
+
+##Question 2:
+from sklearn.model_selection import train_test_split
+df_train_full, df_test = train_test_split(df, test_size=0.2, random_state=42)
+df_train, df_val = train_test_split(df_train_full, test_size=0.25, random_state=42)
+y_train=df_train.price.values
+y_val=df_val.price.values
+y_test=df_test.price.values
+
+aav_train = (y_train>=152).astype(int)
+aav_test = (y_test>=152).astype(int)
+aav_val = (y_val>=152).astype(int)
+
+df_train.drop(columns='price')
+df_test.drop(columns='price')
+df_val.drop(columns='price')
+
+numerical=[
+'number_of_reviews',
+'reviews_per_month',
+'calculated_host_listings_count',
+'availability_365']
+
+categorical=['room_type','neighbourhood_group']
+
+liste = ['neighbourhood_group','room_type','reviews_per_month']
+##Question 5:
+categorical=['room_type','neighbourhood_group']
+  #'number_of_reviews'  
+df_train = df_train[numerical]   
+
+
+from sklearn.preprocessing import StandardScaler
+scaler = StandardScaler()
+X_std = scaler.fit_transform(df_train)
+cor_mat2 = np.corrcoef(X_std.T)
+
+eig_vals, eig_vecs = np.linalg.eig(cor_mat2)
+
+print('Eigenvectors \n%s' %eig_vecs)
+print('\nEigenvalues \n%s' %eig_vals)
+
+eig_pairs = [(np.abs(eig_vals[i]), eig_vecs[:,i]) for i in range(len(eig_vals))]
+
+# Sort the (eigenvalue, eigenvector) tuples from high to low
+eig_pairs.sort(key=lambda x: x[0], reverse=True)
+
+# Visually confirm that the list is correctly sorted by decreasing eigenvalues
+print('Eigenvalues in descending order:')
+for i in eig_pairs:
+    print(i[0])
+    
+
+tot = sum(eig_vals)
+var_exp = [(i / tot)*100 for i in sorted(eig_vals, reverse=True)]
+cum_var_exp = np.cumsum(var_exp)
+"""
+with plt.style.context('seaborn-whitegrid'):
+    plt.figure(figsize=(6, 4))
+
+    plt.bar(range(4), var_exp, alpha=0.5, align='center',
+            label='individual explained variance')
+    plt.step(range(4), cum_var_exp, where='mid',
+             label='cumulative explained variance')
+    plt.ylabel('Explained variance ratio')
+    plt.xlabel('Principal components')
+    plt.legend(loc='best')
+    plt.tight_layout()
+"""    
+from sklearn.decomposition import PCA
+pca = PCA()
+pca.fit(X_std)
+print(pca.explained_variance_)
