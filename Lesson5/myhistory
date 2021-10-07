@@ -1,0 +1,530 @@
+  500  jupyter-notebook
+  501  pip install -U turicreate
+  502  jupyter--notebook
+  503  jupyter-notebook
+  504  pwd
+  505  cd ~/Downloads
+  506  jupyter-notebook
+  507  exit
+  508  jupyter-notebook
+  509  conda install -c conda-forge pydotplus -y
+  510  exit
+  511  spyder
+  512  spyder
+  513  pip install -U scikit-learn
+  514  python -m pip show scikit-learn
+  515  spyder
+  516  pip install numpy
+  517  spyder
+  518  pip uninstall numpy
+  519  pip install -U scikit-learn
+  520  spyder
+  521  conda install -c dato-internals graphlab-create
+  522  jupyter-notebook
+  523  pip install graphviz
+  524  exit
+  525  ./julia
+  526  julia
+  527  cd Downloads/Julia
+  528  ls
+  529  vi script.jl
+  530  vi script.jl
+  531  vi script.jl
+  532  grbgetkey
+  533  grbgetkey c7c64a22-0e4f-11ec-90d9-0242ac120002
+  534  cls
+  535  clear
+  536  ls
+  537  vi guscript.jl
+  538  ./Julia
+  539  cd /Library/gurobi801/mac64/
+  540  cd /Library/gurobi801/
+  541  spyder
+  542  cd Downloads/Julia
+  543  ls
+  544  vi guscript.jl
+  545  vi guscript.jl
+  546  vi guscript.jl
+  547  cd /Library
+  548  pwd
+  549  ls gur*
+  550  pwd
+  551  ls -al
+  552  cd gurobi910
+  553  ls
+  554  cd mac64
+  555  ls
+  556  cd ..
+  557  cd ..
+  558  ls gur*
+  559  ipython
+  560  exit
+  561  pwd
+  562  cd Downloads
+  563  vi homework1
+  564  cd downloads
+  565  ls home*
+  566  vi homework1
+  567  julia
+  568  exit
+  569  jupyter-notebook
+  570  spyder
+  571  ipython
+  572  exit
+  573  jupyter-notebook
+  574  spyder
+  575  conda install scikit-learn==0.24.1.
+  576  conda update scikit-learn
+  577  pip install --upgrade scikit-learn
+  578  ipython
+  579  spyder
+  580  spyder
+  581  spyder
+  582  spyder
+  583  spyder
+  584  spyder
+  585  conda install -c conda-forge xgboost\n
+  586  jupyter-notebook
+  587  jupyter-notebook
+  588  date
+  589  cal 1977
+  590  spyder
+  591  python
+  592  spyder()\nexit()\nexit
+  593  clear
+  594  spyder
+  595  curl http://0.0.0.0:9696/ping
+  596  exit
+  597  ipython
+  598  ls
+  599  pwd
+  600  mkdir MLlearn
+  601  cd MLlearn
+  602  mv ../*.* .
+  603  ls
+  604  vi test.py
+  605  ./python
+  606  /usr/bin/python
+  607  cd /usr/bin
+  608  ls pyt*
+  609  ./python3
+  610  cd
+  611  pwd
+  612  cd MLlearn
+  613  ls 
+  614  ls -l
+  615  ls
+  616  vi test.py
+  617  /usr/bin/python3 test.py
+  618  /usr/bin/python3
+  619  pip install scikit-learn
+  620  /opt/anaconda3/lib/python3
+  621  /opt/anaconda3/lib/python3.8
+  622  python
+  623  /usr/bin/python3 test.py
+  624  python
+  625  python test.py
+  626  vi test.py
+  627  python test.py
+  628  vi ping.py
+  629  python ping.py
+  630  python
+  631  pip istall flask
+  632  pip install flask
+  633  vi ping.py
+  634  vi ping.py
+  635  python ping.py
+  636  python
+  637  vi ping.py
+  638  python ping.py
+  639  vi ping.py
+  640  python ping.py
+  641  vi ping.py
+  642  ls
+  643  cat ping.py
+  644  cat test.py
+  645  vi test.py
+  646  vi test.py
+  647  vi test.py
+  648  ls pre*
+  649  ls
+  650  cat test.py
+  651  p test.py predict.py
+  652  cp test.py predict.py
+  653  vi  predict.py
+  654  python predict
+  655  python predict.py
+  656  vi predict.py
+  657  python predict.py
+  658  vi predict.py
+  659  python predict.py
+  660  vi predict.py
+  661  python predict.py
+  662  vi predict.py
+  663  python predict.py
+  664  vi predict.py
+  665  python predict.py
+  666  pip pipenv install
+  667  pip Pipenv install
+  668  pip install Pipenv
+  669  pipenv --version
+  670  pip install Pipenv
+  671  pipenv --version
+  672  pipenv install numpy
+  673  env
+  674  ls
+  675  exit
+  676  pipenv
+  677  pipenv
+  678  ls
+  679  pwd
+  680   . /Users/josedelcour/.local/share/virtualenvs/josedelcour-DghgVUd0/bin/activate
+  681  ls
+  682  python
+  683  python pickle_read.py
+  684  python pickle_read.py
+  685  sklearn. __version__ 
+  686  python
+  687  python pickle_read.py
+  688  cat pla*
+  689  exit
+  690  ls
+  691  ls *.bin
+  692  ls *bin
+  693  ls
+  694  ls -d
+  695  pwd
+  696  pipenv install numpy pandas scikit-learn == 1.0
+  697  pipenv install numpy pandas 
+  698  pipenv install scikit-learn == 1.0
+  699  pipenv install scikit-learn = 1.0
+  700  pipenv install scikit-learn==1.0
+  701  pipenv install flask
+  702  pipenv shell
+  703  exit
+  704   . /Users/josedelcour/.local/share/virtualenvs/josedelcour-DghgVUd0/bin/activate
+  705  python
+  706  pipenv shell
+  707  ls pip*
+  708  pwd
+  709  cat prep
+  710  pwd
+  711  exit
+  712   . /Users/josedelcour/.local/share/virtualenvs/josedelcour-DghgVUd0/bin/activate
+  713  which gunicorn
+  714  echo $PATH
+  715   . /Users/josedelcour/.local/share/virtualenvs/josedelcour-DghgVUd0/bin/activate
+  716  gunicorn --bind 0.0.0.0 predict.app
+  717  ls
+  718  gunicorn --bind 0.0.0.0 pickle_read.py
+  719  pwd
+  720  gunicorn --bind 0.0.0.0 pickle_read.py
+  721  gunicorn --bind 0.0.0.0 pickle_read:app
+  722  exit
+  723  jupyter-notebook
+  724  jupyter-notebook
+  725  pipenv shell
+  726  ls P*
+  727  cat Pipfile.lock
+  728  ls P*
+  729  vi Pipfile
+  730  ls _*
+  731  pipenv install gunicorn
+  732  cat PipFile
+  733  pipenv install
+  734  vi Pipenv.lock
+  735  ls P*
+  736  vi Pipfile.lock
+  737  ?which
+  738  doc which
+  739  which ?
+  740  man which
+  741  which gunicorn
+  742  pipenv shell
+  743  pipenv gunicorn --bind 0.0.0.0:96969 predict.app
+  744  pipenv shell
+  745  pwd
+  746  cd Downloads
+  747  cd PythonFiles
+  748  ls
+  749  python predict.py
+  750  mv predict predict.py
+  751  python predict.py
+  752  python predict.py
+  753  vi predict.py
+  754  python predict.py
+  755  vi predict.py
+  756  python predict.py
+  757  vi predict.py
+  758  python predict.py
+  759  vi predict.py
+  760  python predict.py
+  761  vi predict.py
+  762  python predict.py
+  763  vi predict-test.py
+  764  python predict.py
+  765  exit
+  766   . /Users/josedelcour/.local/share/virtualenvs/josedelcour-DghgVUd0/bin/activate
+  767  pwd
+  768  cd Downloads
+  769  cd PythonFiles
+  770  python predict_Script.py
+  771  gunicorn
+  772   pip install gunicorn
+  773  gunicorn --bind 0.0.0.0:9696 predict:app
+  774  gunicorn --bind 0.0.0.0:9696 predict:app
+  775  gunicorn --bind 0.0.0.0:9696 predict:app
+  776  gunicorn --bind 0.0.0.0:9696 predict:app
+  777  gunicorn --bind 0.0.0.0:9696 predict:app
+  778  exit
+  779  cd Downloads
+  780  cd PythonFiles
+  781  python predict_Script.py
+  782  python
+  783  pipenv shell
+  784  exit
+  785  spyder
+  786  pwd
+  787  cd Downloads
+  788  cd PythonFiles
+  789  vi predict.py
+  790  vi predict.py
+  791  vi predict.py
+  792  vi predict.py
+  793  vi predict.py
+  794  spyder
+  795  docker run -d -p 80:80 docker/getting-started\n\n\n
+  796  docker run -dp 80:80 docker/getting-started
+  797  docker run -dp 80:80 docker/getting-started
+  798  exit
+  799  docker exec -it b606324e8443f96ee0d1e027b3193ba6d160fd820b6923ce1a606e1c7ea1bdbe /bin/sh
+  800  docker run -it --rm python:3.8.11-slim
+  801  docker run -it -e --rm python:3.8.11-slim
+  802  docker run -it -entrypoint bash --rm python:3.8.11-slim
+  803  docker run -it -entrypoint= bash --rm python:3.8.11-slim
+  804  docker run -it --rm -entrypoint= bash python:3.8.11-slim
+  805  python
+  806  docker run -it --rm -entrypoint= bash 
+  807  docker run -it --rm -entrypoint= bash python:3.8.12-slim
+  808  docker run -it --rm -entrypoint= bash
+  809  docker run -it --rm -entrypoint=bash python:3.8.12
+  810  docker run -it --rm -entrypoint=bash python:3.8.12-slim
+  811  ls
+  812  pwd
+  813  docker run -it --rm -entrypoint=bash python:3.8.12-slim
+  814  docker pull agrigorev/zoomcamp-model
+  815  docker pull agrigorev/zoomcamp-model
+  816  docker pull
+  817  docker pull agrigorev/zoomcamp-model
+  818  docker run -it --rm -entrypoint=bash python:3.8.12-slim
+  819  whoami
+  820  docker run -it --rm -entrypoint=bash 
+  821  docker run -it --entrypoint==bash python:3.8.12-slim
+  822  docker run -it --entrypoint=bash python:3.8.12-slim
+  823  docker run -it --entrypoint=bash python:3.8.12-slim
+  824  docker run -it --entrypoint=bash python:3.8.12-slim
+  825  docker pull agrigorev/zoomcamp-model
+  826  docker pull agrigorev/zoomcamp-model
+  827  docker pull agrigorev/zoomcamp-model:3.8.12-slim
+  828  ls
+  829  pwd
+  830  exit
+  831  docker pull agrigorev/zoomcamp-model:3.8.12-slim
+  832  docker -entrypoint=bash
+  833  pwd
+  834  cd Downloads
+  835  cd PythonFiles
+  836  docker run -it --rm --entrypoint=bash python:3.8.12-slim
+  837  docker pull agrigorev/zoomcamp-model:3.8.12-slim
+  838  exit
+  839  cd Downloads/PythonFiles
+  840  ls
+  841  vi Dockerfile
+  842  mkdir EX5
+  843  cp pred*.* ./EX5
+  844  cp dv.bin ./EX5
+  845  cp model1.bin ./EX5
+  846  cd EX5
+  847  ls
+  848  cd ..
+  849  cat predict
+  850  ls pre*
+  851  cat predict.py
+  852  clear
+  853  cd EX5
+  854  vi myDockerFile
+  855  vi myDockerFile
+  856  cd ..
+  857  ls P*
+  858  ls P*
+  859  ls p*
+  860  cd
+  861  ls p*
+  862  ls P*
+  863  find . -name *.locl -print
+  864  find . -name *.lock -print
+  865  vi myDockerFile
+  866  cd Downloads
+  867  cd PythonFiles
+  868  cd EX5
+  869  vi myDockerFile
+  870  rn myDockerFile Dockerfile
+  871  mv  myDockerFile Dockerfile
+  872  docker build -t myzc-test
+  873  docker build -t myzc-test .
+  874  ls
+  875  vi Dockerfile
+  876  docker build -t myzc-test .
+  877  docker scan
+  878  docker help
+  879  ls
+  880  docker images
+  881  docker info
+  882  docker images
+  883  docker help
+  884  docker info
+  885  docker help
+  886  docker images
+  887  docker run -it --rm --entrypoint=bash agrigorev/zoomcamp-model
+  888  docker run -it --rm --entrypoint=bash agrigorev/zoomcamp-model:3.8.12-slim
+  889  docker myzc-test
+  890  docker run -it --rm --entrypoint=bash myzc-test
+  891  ls
+  892  vi Dockerfile
+  893  docker run -it --rm --entrypoint=bash myzc-test
+  894  cat Dockerfile
+  895  vi Dockerfile
+  896  docker run -it --rm --entrypoint
+  897  docker help
+  898  docker info
+  899  docker help
+  900  docker images
+  901  docker run -it --rm --entrypoint=bash myzc-test
+  902  docker commit
+  903  docker commit myzc-test
+  904  docker commit myzc-test:latest
+  905  docker build -t myzc-test .
+  906  pipenv install --system --deploy
+  907  exit
+  908  cd Downloads/PythonFiles/EX5
+  909  ls
+  910  pipenv install --system
+  911  pipenv install --deploy
+  912  docker help
+  913  vi Dockerfile
+  914  docker build -t myzc-test .
+  915  vi Dockerfile
+  916  docker build -t myzc-test .
+  917  pip install pipenv
+  918  pipenc install --system --deploy
+  919  pipenv install --system --deploy
+  920  cat Dockerfile
+  921  docker help
+  922  docker help cp
+  923  docker help run
+  924  clear
+  925  docker run -it --rm --entrypoint=bash myzc-test
+  926  vi Dockerfile
+  927  docker build -t myzc-test .
+  928  exit
+  929  cd Downloads/PythonFiles/EX5
+  930  ls
+  931  cd Downloads/PythonFiles
+  932  cd EX5
+  933  ls
+  934  vi Dockerfile
+  935  docker build -t myzc-test .
+  936  docker image
+  937  docker help
+  938  docker images
+  939  docker run -it --rm --entrypoint=bash myzc-test
+  940  vi Dockerfile
+  941  ls
+  942  vi Dockerfile
+  943  cd ..
+  944  ls mod*
+  945  cat model1.bin
+  946  cd EX5
+  947  docker build -t myzc-test .
+  948  docker run -it --rm --entrypoint=bash myzc-test
+  949  exit
+  950  docker run -it --rm --entrypoint=bash myzc-test
+  951  vi Dockerfile
+  952  cd /Downloads/PythonFiles/EX5
+  953  vi Dockerfile
+  954  l
+  955  ls
+  956  pwd
+  957  cd Downloads
+  958  cd PythonFiles
+  959  cd EX5
+  960  ls
+  961  vi Dockerfile
+  962  docker build -t myzc-test .
+  963  docker run -it --rm --entrypoint=bash myzc-test
+  964  docker image ls --digests
+  965  docker run -it --rm --entrypoint=bash myzc-test
+  966  docker build -t myzc-test .
+  967  docker image ls --digests
+  968  docker run -it --rm --entrypoint=bash myzc-test
+  969  cat
+  970  ls
+  971  vi Dockerfile
+  972  exit
+  973  docker run -it --rm --entrypoint=bash myzc-test
+  974  exit
+  975  python
+  976  exit
+  977  cd Downloads/PythonFiles
+  978  ls
+  979  python
+  980  python predict.py
+  981  ls 
+  982  cat predict.py
+  983  ls 
+  984  cat predict_Script.py
+  985  python predict.py
+  986  vi python.py
+  987  pwd
+  988  cd EX5
+  989  ls
+  990  vi predict.py
+  991  python predict
+  992  python predict.py
+  993  docker images
+  994  docker run -it --rm --entrypoint myzc-test
+  995  docker run -it --rm --entrypoint=bash myzc-test
+  996  ls
+  997  vi Dockerfile
+  998  docker images
+  999  docker build -t myzc-test .
+ 1000  exit
+ 1001  cd Downloads/cd PythonFiles/EX5
+ 1002  cd Downloads/PythonFiles/EX5
+ 1003  ls
+ 1004  vi Dockerfile
+ 1005  docker build -t myzc-test .
+ 1006  docker run -it --rm --entrypoint=bash myzc-test
+ 1007  docker run -it --rm -p 9696:9696 myzc-test
+ 1008  docker run -it --rm --entrypoint=bash -p 9696:9696 myzc-test
+ 1009  ls
+ 1010  vi predict_Script.py
+ 1011  docker build -t myzc-test .
+ 1012  docker run -it --rm --entrypoint=bash -p 9696:9696 myzc-test
+ 1013  vi predict.py
+ 1014  vi predict_Script.py
+ 1015  docker help
+ 1016  docker inspect
+ 1017  docker images
+ 1018  docker inspect myzc-test
+ 1019  docker images help
+ 1020  history
+ 1021  man history
+ 1022  history complete
+ 1023  man history
+ 1024  vim ~/.bash_history 
+ 1025  history
+ 1026  vi . bash_history
+ 1027  vi .bash_history
+ 1028  history[100]
+ 1029  history 100
